@@ -1,0 +1,144 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  display: flex;
+  justify-content: center; /* Center the form horizontally */
+  align-items: center; /* Center the form vertically */
+  height: 100vh; /* Full screen height */
+  padding-top: 50px; /* Add space at the top */
+}
+
+/* Form Container */
+.container {
+  width: 100%;
+  max-width: 600px; /* Form width */
+  background-color: #fff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd; /* Light border */
+  padding-bottom: 30px;
+}
+
+/* Form Heading */
+h3 {
+  font-size: 28px;
+  color: #007bff;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Label Styling */
+label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+/* Textarea Specific Styling */
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Focus Effect for Inputs */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Submit Button Styling */
+button {
+  padding: 14px 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Full width button */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Success and Error Messages */
+#message {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#message.success {
+  color: #28a745; /* Green for success */
+}
+
+#message.error {
+  color: #dc3545; /* Red for error */
+}
+
+/* Mobile View Adjustments */
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 20px 15px;
+    margin: 0 10px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 18px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select,
+  textarea {
+    padding: 12px;
+  }
+}

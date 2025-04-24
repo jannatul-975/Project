@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Khulna University Guest House</title>
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <!-- Header Section -->
+
+    <?php include('header.php'); ?>
+
+    <!-- Form Section -->
+    <div class="form-container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="email" name="email" placeholder="Email" required />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <div class="button-group">
+          <button type="submit">Login</button>
+        </div>
+      </form>
+      <div id="loginMessage"></div>
+    </div>
+
+    <!-- Footer Section -->
+
+    <?php include('footer_index.php'); ?>
+
+    <script src="login.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

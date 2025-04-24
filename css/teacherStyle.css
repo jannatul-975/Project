@@ -1,0 +1,191 @@
+/* Profile Edit Form */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Profile Picture Section */
+.d-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#profile-img {
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 100%; /* Ensure it doesn't overflow */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Add some space below the profile section */
+#profile-img {
+  margin-bottom: 20px;
+}
+
+/* Update Button */
+.btn-success {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* Mobile View Adjustments */
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 20px;
+    margin: 0 10px;
+  }
+
+  #profile-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .navbar-text {
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+
+/* Ensure Sidebar and Profile Picture Section Looks Good on All Devices */
+#sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #343a40;
+  padding-top: 20px;
+  list-style: none;
+  padding-left: 0;
+  border-right: 2px solid #dee2e6;
+}
+
+#sidebar h4 {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#sidebar .nav-link,
+#sidebar .nav-item span {
+  color: white;
+  padding: 12px 20px;
+  display: block;
+  text-decoration: none;
+  font-size: 16px;
+  border-bottom: 1px solid #495057;
+  transition: background-color 0.3s ease;
+}
+
+#sidebar .nav-link:hover {
+  background-color: #495057;
+}
+
+#sidebar .nav-item span {
+  background-color: #495057;
+  cursor: not-allowed;
+}
+
+#sidebar .nav {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Profile Picture Section */
+.d-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#profile-img {
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

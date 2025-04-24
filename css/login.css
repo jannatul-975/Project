@@ -1,0 +1,67 @@
+/* Login Form Styles */
+.form-container {
+  background-color: #fff;
+  width: 100%;
+  max-width: 400px;
+  margin: 80px auto 40px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ffffff; /* White background for form */
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333333; /* Dark Slate Gray text */
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd; /* Light gray border for inputs */
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #80c7db; /* Soft Blue on focus */
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #006d6d; /* Deep Blue for the button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff6f61; /* Vibrant Coral on hover */
+}
+
+button:focus {
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#loginMessage {
+  margin-top: 10px;
+  color: #a81504; /* Dark Red for error message */
+  font-size: 14px;
+}

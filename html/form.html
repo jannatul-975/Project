@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create New Profile</title>
+    <link rel="stylesheet" href="../css//formStyle.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#profileForm").submit(function (event) {
+          event.preventDefault(); // Prevent default submission
+
+          let formData = $(this).serialize();
+
+          $.ajax({
+            url: "../php/Form.php", // PHP file to handle form submission
+            type: "POST",
+            data: formData,
+            success: function (response) {
+              $("#message").html(response).css("color", "green");
+              $("#profileForm")[0].reset(); // Reset form after submission
+            },
+            error: function () {
+              $("#message").html("An error occurred!").css("color", "red");
+            },
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Create New Profile</h3>
+      <form method="POST" action="" id="profileForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Phone No:</label>
+        <input type="text" id="phone" name="phone" required />
+
+        <label for="designation">Designation:</label>
+        <input type="text" id="designation" name="designation" required />
+
+        <label for="dept_name">Discipline:</label>
+        <input type="text" id="dept_name" name="dept_name" required />
+
+        <label for="role">Role:</label>
+        <select id="role" name="role" required>
+          <option value="Teacher">Teacher</option>
+          <option value="Officestaff">Officestaff</option>
+          <option value="Register">Register</option>
+          <option value="Vice Chancellor">Vice Chancellor</option>
+          <option value="Pro-Vice Chancellor">Pro-Vice Chancellor</option>
+          <option value="Treasurer">Treasurer</option>
+        </select>
+
+        <button type="submit" id="submitButton">Submit</button>
+      </form>
+      <p id="message"></p>
+    </div>
+  </body>
+</html>
