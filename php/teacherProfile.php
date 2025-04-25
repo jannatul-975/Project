@@ -1,52 +1,38 @@
 <?php 
-// Start session or include code for fetching teacher details from the database
 session_start();
-include('dbconnect.php');
+include('./db.php');
 
-// Assuming teacher ID is stored in the session
-$teacher_id = $_SESSION['id'] ?? 0; 
-
-// Fetch teacher details from the database
-if ($teacher_id) {
-    $query = "SELECT name, email, phone_no, dept_name, profile_pic FROM teacher WHERE id = ?";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("i", $teacher_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $teacher = $result->fetch_assoc();
-        // Assign values from database
-        $name = $teacher['name'] ?? 'Default Name';
-        $email = $teacher['email'] ?? '';
-        $phone_no = $teacher['phone_no'] ?? '';
-        $dept_name = $teacher['dept_name'] ?? '';
-        $profile_pic = $teacher['profile_pic'] ?? 'profile.jpg';
-    } else {
-        // If no result found, assign default values
-        $name = 'Default Name';
-        $email = '';
-        $phone_no = '';
-        $dept_name = '';
-        $profile_pic = 'profile.jpg';
-    }
-} else {
-    // If teacher ID is not found, assign default values
-    $name = 'Default Name';
-    $email = '';
-    $phone_no = '';
-    $dept_name = '';
-    $profile_pic = 'profile.jpg';
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
 }
-?>
 
-<?php include('header_sidebar.php'); ?>
+$teacher_id = $_SESSION['user_id'];
+
+$query = "SELECT name, email, phone, dept_name, profile_pic FROM user WHERE id = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $teacher_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 0) {
+    echo "<h4 style='color:red;'>Teacher profile not found.</h4>";
+    exit();
+}
+
+$teacher = $result->fetch_assoc();
+$name = $teacher['name'];
+$email = $teacher['email'];
+$phone_no = $teacher['phone'];
+$dept_name = $teacher['dept_name'];
+$profile_pic = $teacher['profile_pic'] ?: 'profile.jpg';
+?>
 
 <div class="container mt-4">
     <h3>Edit Profile</h3>
     <form method="POST" enctype="multipart/form-data">
         <div class="d-flex flex-column align-items-center mb-4">
-            <img id="profile-img" src="profile_pics/<?php echo $profile_pic; ?>" class="rounded-circle" width="100" height="100">
+            <img id="profile-img" src="profile_pics/<?php echo htmlspecialchars($profile_pic); ?>" class="rounded-circle" width="100" height="100">
             <h3><?php echo htmlspecialchars($name); ?></h3>
             <h4>Teacher Id: <?php echo htmlspecialchars($teacher_id); ?></h4>
             <button class="btn btn-primary mt-3" onclick="document.getElementById('profile-pic-input').click(); return false;">Change Photo</button>
@@ -71,5 +57,3 @@ if ($teacher_id) {
         <button type="submit" class="btn btn-success">Update</button>
     </form>
 </div>
-
-<?php include('footer.php'); ?>

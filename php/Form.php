@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $role = $conn->real_escape_string($_POST['role']);
 
     // Default password for the user
-    $defaultPassword = password_hash("guesthouse@!", PASSWORD_DEFAULT);
+    $defaultPassword = password_hash("reyadonekvalo", PASSWORD_DEFAULT);
     // Default profile picture path (this can be omitted as it is set in the database schema)
     $defaultProfilePic = '/project/profile_pics/profile.jpg'; 
 

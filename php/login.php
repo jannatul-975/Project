@@ -121,10 +121,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="../css/login.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+     .reyad {
+    font-size: 30px;              
+    color: #4A90E2;                
+    font-family: 'Arial', sans-serif;  
+    line-height: 1.6;              
+    background-color: #F0F8FF;    
+    padding: 10px;               
+    border-radius: 5px;            
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;           
+    margin : 30px auto;
+    font-weight: bold;             
+}
+
+    </style>
   </head>
   <body>
     <!-- Header Section -->
     <?php include('header.php'); ?>
+
+  <p class="reyad">
+    আগে তোর কাছে ১ কাপ চা ☕ পেতাম এখন ২ কাপ পাই🫖
+  </p>
 
     <!-- Form Section -->
     <div class="form-container" autocomplete="on">

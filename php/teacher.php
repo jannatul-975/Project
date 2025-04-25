@@ -1,4 +1,4 @@
-<?php include('header_sidebar.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="../css/dashboard.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- Optional Custom JS for dynamic behavior (like dropdown, etc.) -->
-    <script src="../js/teacher.js"></script>
 </head>
 <body>
 <!-- Teacher Dashboard Content -->
@@ -27,8 +25,10 @@
             <li><a href="../php/giving_feedback.php">Giving feedback</a>: Give Feedbacks on experiencing in guest house of Khulna University.</li>
             <li><a href="../php/teacherProfile.php">Profile</a>: View your Profile Information.</li>
             <li><a href="../php/logout.php">logout</a>: Logout from your profile.</li>
+         
         </ol>
     </div>
 </div>
 
-<?php include('footer.php'); ?>
+
+

@@ -41,7 +41,6 @@ $(document).ready(function () {
         if (response.status === "success") {
           // Redirect to the appropriate page
           console.log("Redirecting to:", response.redirect);
-          window.location.href = "../php/teacher.php";
           if (response.redirect) {
             window.location.href = response.redirect; // Redirect to the appropriate page
           } else {
