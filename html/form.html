@@ -4,35 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create New Profile</title>
-    <link rel="stylesheet" href="../css//formStyle.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#profileForm").submit(function (event) {
-          event.preventDefault(); // Prevent default submission
-
-          let formData = $(this).serialize();
-
-          $.ajax({
-            url: "../php/Form.php", // PHP file to handle form submission
-            type: "POST",
-            data: formData,
-            success: function (response) {
-              $("#message").html(response).css("color", "green");
-              $("#profileForm")[0].reset(); // Reset form after submission
-            },
-            error: function () {
-              $("#message").html("An error occurred!").css("color", "red");
-            },
-          });
-        });
-      });
-    </script>
+    <link rel="stylesheet" href="../css/formStyle.css" />
   </head>
   <body>
     <div class="container">
       <h3>Create New Profile</h3>
-      <form method="POST" action="" id="profileForm">
+      <form method="POST" action="../php/Form.php" id="profileForm">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required />
 
@@ -43,10 +20,15 @@
         <input type="text" id="phone" name="phone" required />
 
         <label for="designation">Designation:</label>
-        <input type="text" id="designation" name="designation" required />
+        <select id="designation" name="designation" required>
+          <option value="Professor">Professor</option>
+          <option value="Associate Professor">Associate Professor</option>
+          <option value="Assistant Professor">Assistant Professor</option>
+          <option value="Lecturer">Lecturer</option>
+        </select>
 
         <label for="dept_name">Discipline:</label>
-        <input type="text" id="dept_name" name="dept_name" required />
+        <select id="dept_name" name="dept_name" required></select>
 
         <label for="role">Role:</label>
         <select id="role" name="role" required>
